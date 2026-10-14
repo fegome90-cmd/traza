@@ -11,9 +11,9 @@ Invariantes: distinguir estado simulado, observación y registro; no transformar
 ## Flujo CLOOP mínimo
 
 1. **Clarify/Layout:** declarar objetivo, alcance, riesgos, artefactos afectados y tests de aceptación en issue/PR; leer código/documentos antes de crear duplicados.
-2. **Operate:** trabajar en rama `feat/*`, `fix/*`, `docs/*` o `chore/*` y worktree aislado cuando el riesgo lo amerite; nunca desarrollar directamente en `main`. `develop` es integración; `main` es estado estable.
-3. **Observe/Reflect:** `npm run check`, `npm test`, `python3 scripts/build.py`, verificar HTML compilado sin cambios accidentales, ejecutar smoke de navegador para cambios visuales y revisar `git diff --check` más complejidad/ruido.
-4. **Reconcile/Promote:** documentar contratos, diffs y evidencia; abrir PR primero hacia `develop`, pasar CI y revisión independiente. Promoción de `develop` a `main` por PR separado y autorización humana.
+2. **Operate:** una rama por tarea (`feat/*`, `fix/*`, `docs/*`, `chore/*`). Worktree aislado obligatorio para implementación, corrección o refactor relevante (Ley IV, art. 3). Sólo puede omitirse si concurren las tres condiciones constitucionales: riesgo bajo, superficie local sin módulos compartidos y ausencia de conflictos con otras tareas. Documentar la justificación; nunca desarrollar en `main` o `develop`.
+3. **Observe/Reflect:** `npm run verify`, `git diff --check`, revisión de coherencia y simplificación. Si cambia `src`, regenerar con `npm run build` antes de verificar; `build:check` compara sin modificar el HTML. Para cambios visuales ejecutar smoke de navegador y revisar capturas.
+4. **Reconcile/Promote:** documentar contratos, diff y evidencia; PR a `develop`, CI y revisión independiente. Promoción de `develop` a `main` por PR separado y autorización humana.
 
 ## Capacidades y aprobación
 
@@ -21,10 +21,11 @@ Invariantes: distinguir estado simulado, observación y registro; no transformar
 
 ## Fuente de verdad y verificación
 
-- Código del dominio: `src/engine.mjs` y pruebas de contratos en `tests/`.
-- Datos externos: `data/` y atribuciones `docs/ATTRIBUTION.md`; no se confunden muestras con anotaciones gold.
-- Vista: `src/graph-*.mjs` y `src/ui/graph.css`; no duplicar lógica temporal aquí.
-- Salida: `dist/index.html` generada por `scripts/build.py` desde `src/`.
-- Normas: constitución v1.0 y mapeo de autoridades. Ningún README o prompt contradice la norma.
+- Dominio: `src/engine.mjs` y pruebas de contratos en `tests/`.
+- Datos externos: `data/` y `docs/ATTRIBUTION.md`; no confundir muestras con anotaciones gold.
+- Vista: `src/graph-*.mjs` y `src/ui/graph.css`; no duplicar lógica temporal.
+- Salida: `dist/index.html`, generada por `scripts/build.py` desde `src/`.
+- Normas: constitución íntegra y mapeo local; este archivo no modifica su texto.
+- Trabajo y evidencia: issue/PR, commit y run de CI. El registro de bootstrap está en `docs/governance/BOOTSTRAP.md`.
 
-**No hacer merge, publicar releases ni desplegar por iniciativa propia.** Un test verde no reemplaza revisión; una revisión sin evidencia tampoco valida el cambio.
+**No hacer merge, publicar releases ni desplegar por iniciativa propia.** Un test verde no reemplaza revisión. CODEOWNERS y los hooks locales no sustituyen protecciones remotas ni una revisión independiente.

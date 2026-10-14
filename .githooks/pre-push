@@ -1,0 +1,11 @@
+#!/bin/sh
+# Opt-in local guard. GitHub rulesets remain necessary for remote enforcement.
+while read -r local_ref local_sha remote_ref remote_sha; do
+  case "$remote_ref" in
+    refs/heads/main|refs/heads/develop)
+      echo "TRAZA: push directo a main/develop bloqueado; usa una rama y PR." >&2
+      exit 1
+      ;;
+  esac
+done
+exit 0

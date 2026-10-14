@@ -73,3 +73,15 @@ Esta versión aplica **sus patrones de interacción**, pero implementa el render
 - Sin verificación real: Safari/iOS, VoiceOver, pinza multitáctil en dispositivo físico, bases masivas y validación clínica.
 
 Los datos sintéticos distribuidos mantienen atribuciones y licencias independientes; ver `docs/ATTRIBUTION.md`. No se han incorporado pacientes reales ni nuevas reglas clínicas.
+
+## Desarrollo gobernado
+
+Lee [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md) y la [adopción constitucional](docs/governance/ADOPTION.md). CI utiliza las versiones de `.nvmrc` y `.python-version`. No hay dependencias npm de ejecución.
+
+```bash
+npm run verify
+```
+
+Verifica formato textual, estructura/secretos comunes, sintaxis, pruebas de dominio, pruebas de gobernanza y que `dist/index.html` coincida con `src`. La verificación no sobrescribe el HTML; para actualizarlo, ejecuta `npm run build`. El servidor opcional `npm run serve` escucha sólo en localhost.
+
+Las protecciones de ramas se siguen en [issue #2](https://github.com/fegome90-cmd/traza/issues/2): políticas, CODEOWNERS y CI no las activan automáticamente. La aplicación se integra mediante PR a `develop`; `main` recibe promociones revisadas.

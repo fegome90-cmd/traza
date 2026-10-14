@@ -1,15 +1,17 @@
-# OS and local tooling
+# OS, caches and dependencies
 .DS_Store
 Thumbs.db
 __pycache__/
 *.py[cod]
 .pytest_cache/
 node_modules/
+.venv/
 .playwright/
 playwright-report/
 test-results/
+coverage/
 
-# Secrets and local configuration (never commit)
+# Secrets and private local data
 .env
 .env.*
 !.env.example
@@ -17,15 +19,20 @@ test-results/
 *.p12
 *.pfx
 *.key
+id_rsa
+id_ed25519
+credentials.json
+data/private/
+data/raw/
 *.log
 
-# Local editor files
+# Editors, worktrees and temporary agent state
 .vscode/
 .idea/
-
-# Isolated worktrees and scratch
 .worktrees/
 worktrees/
+.superpowers/
 .tmp/
 .tmp-*/
-coverage/
+
+# dist/index.html and attributed synthetic fixtures are intentionally versioned.

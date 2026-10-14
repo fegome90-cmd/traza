@@ -1,5 +1,4 @@
-# TRAZA: mapeo operativo de la Constitución Agéntica v1.0.
-# Documento de autoridad; por sí solo NO cambia permisos de GitHub.
+# Mapeo operativo. No concede permisos ni modifica GitHub.
 version: 1
 project: fegome90-cmd/traza
 default_role: reader
@@ -19,13 +18,18 @@ roles:
     capabilities: [read, write, review, sensitive_op, govern]
   human-approver:
     capabilities: [approve]
+# La coincidencia más específica prevalece. Riesgo no otorga capacidad write.
 surfaces:
   src/: low_risk
   tests/: low_risk
   docs/: low_risk
   _ctx/: medium_risk
   _ctx/policy/: critical_risk
-  .github/workflows/: critical_risk
+  docs/governance/: critical_risk
+  AGENTS.md: critical_risk
+  .github/: critical_risk
+  .githooks/: critical_risk
+  scripts/repo_checks.py: critical_risk
   .env: high_risk
   credentials: high_risk
 rules:
