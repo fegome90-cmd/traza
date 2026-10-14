@@ -1,0 +1,42 @@
+{
+  "version": "0.3.0",
+  "unit_tests": 109,
+  "browser_checks": 46,
+  "renderer": "Canvas2D",
+  "no_network": true,
+  "continuity": {
+    "engine": {
+      "identical_to_v0_2": true,
+      "sha256": "5c32a578101ad65d9cccc16725663080ad013153185e4dc8aabbc1008b2487c5"
+    },
+    "extractor": {
+      "identical_to_v0_2": true,
+      "sha256": "cfd1da309258bbb957d548ca65960311a112c7c53ebdac173fa1d827ab7009fe"
+    },
+    "fixtures": {
+      "identical_to_v0_2": true,
+      "sha256": "37f5327b28ea3d1b65bab4c3a654ee35382d3e10a85e932e5af7d7b928f8147d"
+    },
+    "corpus": {
+      "identical_to_v0_2": true,
+      "sha256": "bbc6d7961a2a4762a98a04052339e1699db7982e338a6bee4b87872603a781f3"
+    },
+    "samples": {
+      "identical_to_v0_2": true,
+      "sha256": "61e06efd5e443cda7d91d31bacdb9944cc70792b3498d96ab608d922b518592c"
+    },
+    "comparison": {
+      "identical_to_v0_2": true,
+      "sha256": "6f06882473289c6d88488ae34316e2fb5f3d57a1179843dc9f91801138cf2f4b"
+    },
+    "export": {
+      "identical_to_v0_2": true,
+      "sha256": "f5954188ba9b6e6be1c0627f159b1bfe4e4be10f73ab7a6f90503a495c4514b7"
+    }
+  },
+  "html": {
+    "bytes": 162960,
+    "sha256": "d05d4bc41965dbc8ee6bdf64ca924cfc012d9a6e77462033397092fc856cdd2d"
+  },
+  "external_dependencies": []
+}

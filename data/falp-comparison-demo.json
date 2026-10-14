@@ -1,0 +1,63 @@
+{
+  "schema": "traza-comparison/0.1",
+  "synthetic": true,
+  "task": "Caso SINT-01 · PICC A, episodio 1 · información explícita de la entrega de las 20:00",
+  "reference": "08:00: PICC A presente.\n12:00: retiro de PICC A registrado a las 13:05.\n20:00: no hay una nueva observación del dispositivo.",
+  "handover": "A las 12:00 se retiró PICC A.\nNo sé si la muestra fue enviada.\nEl paciente refiere dolor 6/10 en reposo.",
+  "record": "A las 12:00 se retiró PICC A.\nLa muestra fue enviada.",
+  "rows": [
+    {
+      "id": "U-ee7aa9ce-bd2858ec-f9999eb1-d8f0009b",
+      "stage": "handover-record",
+      "start": 0,
+      "end": 29,
+      "source": "A las 12:00 se retiró PICC A.",
+      "key": "SINT-01 / PICC-A-1 / retiro / 12:00",
+      "target": "A las 12:00 se retiró PICC A.",
+      "status": "preserved",
+      "uncertainty": "not_applicable",
+      "note": "La misma acción realizada y el mismo tiempo están expresos en ambas fuentes."
+    },
+    {
+      "id": "U-32d6a775-98a1f511-1e152f29-bf83c0e2",
+      "stage": "handover-record",
+      "start": 30,
+      "end": 62,
+      "source": "No sé si la muestra fue enviada.",
+      "key": "SINT-01 / muestra-1 / envío / 20:00",
+      "target": "La muestra fue enviada.",
+      "status": "altered",
+      "uncertainty": "lost",
+      "note": "La falta explícita de conocimiento se transformó en afirmación categórica. Alteración epistémica, no contradicción factual adjudicada; no prueba que la muestra no fuera enviada."
+    },
+    {
+      "id": "U-f1ddcc22-60e50b35-725515e2-942474b0",
+      "stage": "handover-record",
+      "start": 63,
+      "end": 104,
+      "source": "El paciente refiere dolor 6/10 en reposo.",
+      "key": "SINT-01 / dolor-reposo / valor / 20:00",
+      "target": "",
+      "status": "omitted",
+      "uncertainty": "not_applicable",
+      "note": "El registro sintético completo no incluye el autorreporte ni su valor 6/10 en reposo."
+    }
+  ],
+  "complete": true,
+  "stage": "handover-record",
+  "metrics": {
+    "units": 3,
+    "pending": 0,
+    "invalid": 0,
+    "conflicts": 0,
+    "omitted": 1,
+    "contradictions": 0,
+    "preserved": 1,
+    "altered": 1,
+    "uncertaintyLost": 1,
+    "loss": 1,
+    "nonConserved": 2,
+    "stage": "handover-record"
+  },
+  "limitations": "Adjudicación manual; no gold del estudio, no NLP validado. P no equivale a S. nonConserved = omisiones + contradicciones + alteraciones en claves semánticas declaradas. loss conserva el conteo específico de omisiones por compatibilidad; no es L general."
+}

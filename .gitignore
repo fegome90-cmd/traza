@@ -1,0 +1,31 @@
+# OS and local tooling
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.playwright/
+playwright-report/
+test-results/
+
+# Secrets and local configuration (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*.log
+
+# Local editor files
+.vscode/
+.idea/
+
+# Isolated worktrees and scratch
+.worktrees/
+worktrees/
+.tmp/
+.tmp-*/
+coverage/

@@ -1,0 +1,232 @@
+[
+  {
+    "check": "desktop: título",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: lienzo real",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: pantalla visible",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: fuente oculta al inicio",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: inspector oculto al inicio",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: alcance local",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: vista con nodos",
+    "ok": true,
+    "extra": "4 nodos · 4 aristas · 3 ocultos · vecindad local"
+  },
+  {
+    "check": "desktop: canvas pintado",
+    "ok": true,
+    "extra": "51534"
+  },
+  {
+    "check": "desktop: expandir modifica alcance",
+    "ok": true,
+    "extra": "4 nodos · 4 aristas · 3 ocultos · vecindad local -> 5 nodos · 5 aristas · 2 ocultos · vecindad local"
+  },
+  {
+    "check": "desktop: abre fuente y cita",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: cierra fuente",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: abre detalle",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: cierra detalle",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: cambia global",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: global sin ocultos",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: búsqueda",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: foco desde búsqueda",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "desktop: no red externa",
+    "ok": true,
+    "extra": "[]"
+  },
+  {
+    "check": "desktop: sin errores runtime",
+    "ok": true,
+    "extra": "[]"
+  },
+  {
+    "check": "mobile: título",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: lienzo real",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: pantalla visible",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: fuente oculta al inicio",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: inspector oculto al inicio",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: alcance local",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: vista con nodos",
+    "ok": true,
+    "extra": "4 nodos · 4 aristas · 3 ocultos · vecindad local"
+  },
+  {
+    "check": "mobile: canvas pintado",
+    "ok": true,
+    "extra": "25630"
+  },
+  {
+    "check": "mobile: expandir modifica alcance",
+    "ok": true,
+    "extra": "4 nodos · 4 aristas · 3 ocultos · vecindad local -> 5 nodos · 5 aristas · 2 ocultos · vecindad local"
+  },
+  {
+    "check": "mobile: abre fuente y cita",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: cierra fuente",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: abre detalle",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: cierra detalle",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: cambia global",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: global sin ocultos",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: búsqueda",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: foco desde búsqueda",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "mobile: no red externa",
+    "ok": true,
+    "extra": "[]"
+  },
+  {
+    "check": "mobile: sin errores runtime",
+    "ok": true,
+    "extra": "[]"
+  },
+  {
+    "check": "temporal 12:30",
+    "ok": true,
+    "extra": "2 afirmaciones · 1 raíces"
+  },
+  {
+    "check": "temporal 13:05",
+    "ok": true,
+    "extra": "3 afirmaciones · 2 raíces"
+  },
+  {
+    "check": "temporal 20:05",
+    "ok": true,
+    "extra": "4 afirmaciones · 2 raíces"
+  },
+  {
+    "check": "PNG del lienzo renderizado",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "ACI: 96 afirmaciones reales importadas",
+    "ok": true,
+    "extra": ""
+  },
+  {
+    "check": "ACI: comienza compacto",
+    "ok": true,
+    "extra": "2 nodos · 1 aristas · 96 ocultos · vecindad local"
+  },
+  {
+    "check": "ACI: expansión acotada a menos de 18 nodos",
+    "ok": true,
+    "extra": "17 nodos · 16 aristas · 81 ocultos · vecindad local"
+  },
+  {
+    "check": "ACI: la vista global contiene 98 nodos",
+    "ok": true,
+    "extra": ""
+  }
+]

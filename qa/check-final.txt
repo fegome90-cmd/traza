@@ -1,0 +1,4 @@
+
+> traza-clinica-obsidian-graph@0.3.0 check
+> node --check src/graph-exploration.mjs && node --check src/graph-layout.mjs && node --check src/graph-view.mjs && node --check src/graph-panel.mjs && node --check src/app.mjs
+

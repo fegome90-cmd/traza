@@ -1,0 +1,14 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {comparisonMetrics,validateAdjudication} from '../src/comparison.mjs';
+const row=(key,status,target='',uncertainty='not_assessed')=>({key,status,target,note:'Mismo sujeto y tiempo revisados',uncertainty});
+test('M01 sin adjudicaciones no se emite pérdida global',()=>assert.equal(comparisonMetrics([row('k','unassessed')],true).loss,null));
+test('M02 no se declara omisión global con registro incompleto',()=>assert.equal(comparisonMetrics([row('k','omitted')],false).loss,null));
+test('M03 compara conjuntos de claves semánticas, no conteo de frases',()=>assert.equal(comparisonMetrics([row('k','omitted'),row('k','omitted')],true).loss,1));
+test('M04 contradicción no equivale a omisión',()=>{const m=comparisonMetrics([row('a','contradicted','X'),row('b','omitted')],true);assert.equal(m.loss,1);assert.equal(m.contradictions,1);});
+test('M05 conservación requiere un fragmento destino',()=>assert.equal(validateAdjudication(row('k','preserved')).ok,false));
+test('M06 eliminación de incertidumbre contada aparte',()=>{const m=comparisonMetrics([row('k','altered','X','lost')],true);assert.equal(m.uncertaintyLost,1);assert.equal(m.loss,0);});
+test('M07 sin unidades el valor global es desconocido, no cero',()=>assert.equal(comparisonMetrics([],true).loss,null));
+test('M08 una misma clave con juicios incompatibles bloquea la métrica',()=>assert.equal(comparisonMetrics([row('k','omitted'),row('k','preserved','X')],true).loss,null));
+test('M09: eliminar incertidumbre es alteración, no contradicción factual automática',()=>{const r={key:'P/1/muestra/t',status:'altered',target:'Muestra enviada.',note:'Cambio de modalidad: desconocido a afirmado, no prueba falsedad.',uncertainty:'lost'};const m=comparisonMetrics([r],true);assert.equal(m.altered,1);assert.equal(m.contradictions,0);assert.equal(m.uncertaintyLost,1);});
+test('M10: no conservación integra categorías excluyentes sin duplicar incertidumbre',()=>{const m=comparisonMetrics([row('a','preserved','A'),row('b','omitted'),row('c','altered','C','lost')],true);assert.equal(m.nonConserved,2);assert.equal(m.loss,1);assert.equal(m.altered,1);assert.equal(m.uncertaintyLost,1);});
+test('M11: conservación total incompatible con pérdida de incertidumbre bloquea L',()=>{assert.equal(validateAdjudication(row('k','preserved','X','lost')).ok,false);});

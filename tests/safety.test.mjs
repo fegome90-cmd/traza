@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {validateBundle,selectView,parseBundle} from '../src/engine.mjs';
+import {demoBundle,demoTime} from '../src/fixtures.mjs';
+import {escapeHTML} from '../src/export.mjs';
+test('S01: enum no acepta propiedades heredadas de Object',()=>{const b=demoBundle();b.claims[0].modality='toString';assert.equal(validateBundle(b).ok,false);});
+test('S02: unidades distintas no generan oposición automática',()=>{const b=demoBundle();const c=structuredClone(b.claims[1]);c.id='OTRA';c.rootIds=[];c.value='60';c.unit='escala /100';b.claims.push(c);assert.equal(selectView(b,{kappa:null,clinicalAt:null}).issues.filter(x=>x.code==='SAME_TIME_OPPOSITION').length,0);});
+test('S03: cambiar unidad conservando raíz es rechazado',()=>{const b=demoBundle();b.claims[1].unit='mg';assert.equal(validateBundle(b).ok,false);});
+test('S04: contenido HTML se escapa sin ejecutar ni insertar elementos',()=>assert.equal(escapeHTML('<img src=x onerror="alert(1)">'), '&lt;img src=x onerror=&quot;alert(1)&quot;&gt;'));
+test('S05: importación con constructor malicioso es rechazada',()=>assert.throws(()=>parseBundle('{"constructor":{}}')));
+test('S06: ningún documento futuro aparece al corte',()=>assert.deepEqual(selectView(demoBundle(),{kappa:demoTime('12:30'),clinicalAt:demoTime('12:30')}).documents.map(d=>d.id),['R01','R02']));

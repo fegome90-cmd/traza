@@ -1,0 +1,668 @@
+
+> traza-clinica-obsidian-graph@0.3.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: M01 sin adjudicaciones no se emite pérdida global
+ok 1 - M01 sin adjudicaciones no se emite pérdida global
+  ---
+  duration_ms: 2.796815
+  type: 'test'
+  ...
+# Subtest: M02 no se declara omisión global con registro incompleto
+ok 2 - M02 no se declara omisión global con registro incompleto
+  ---
+  duration_ms: 0.281895
+  type: 'test'
+  ...
+# Subtest: M03 compara conjuntos de claves semánticas, no conteo de frases
+ok 3 - M03 compara conjuntos de claves semánticas, no conteo de frases
+  ---
+  duration_ms: 0.16575
+  type: 'test'
+  ...
+# Subtest: M04 contradicción no equivale a omisión
+ok 4 - M04 contradicción no equivale a omisión
+  ---
+  duration_ms: 0.177798
+  type: 'test'
+  ...
+# Subtest: M05 conservación requiere un fragmento destino
+ok 5 - M05 conservación requiere un fragmento destino
+  ---
+  duration_ms: 0.194944
+  type: 'test'
+  ...
+# Subtest: M06 eliminación de incertidumbre contada aparte
+ok 6 - M06 eliminación de incertidumbre contada aparte
+  ---
+  duration_ms: 0.221393
+  type: 'test'
+  ...
+# Subtest: M07 sin unidades el valor global es desconocido, no cero
+ok 7 - M07 sin unidades el valor global es desconocido, no cero
+  ---
+  duration_ms: 0.144538
+  type: 'test'
+  ...
+# Subtest: M08 una misma clave con juicios incompatibles bloquea la métrica
+ok 8 - M08 una misma clave con juicios incompatibles bloquea la métrica
+  ---
+  duration_ms: 0.241995
+  type: 'test'
+  ...
+# Subtest: M09: eliminar incertidumbre es alteración, no contradicción factual automática
+ok 9 - M09: eliminar incertidumbre es alteración, no contradicción factual automática
+  ---
+  duration_ms: 0.4245
+  type: 'test'
+  ...
+# Subtest: M10: no conservación integra categorías excluyentes sin duplicar incertidumbre
+ok 10 - M10: no conservación integra categorías excluyentes sin duplicar incertidumbre
+  ---
+  duration_ms: 0.529328
+  type: 'test'
+  ...
+# Subtest: M11: conservación total incompatible con pérdida de incertidumbre bloquea L
+ok 11 - M11: conservación total incompatible con pérdida de incertidumbre bloquea L
+  ---
+  duration_ms: 0.195325
+  type: 'test'
+  ...
+# Subtest: C01 delimitadores aislados producen casos, sin separar guiones internos
+ok 12 - C01 delimitadores aislados producen casos, sin separar guiones internos
+  ---
+  duration_ms: 1.878241
+  type: 'test'
+  ...
+# Subtest: C02 cada caso mantiene offsets exactos respecto al archivo
+ok 13 - C02 cada caso mantiene offsets exactos respecto al archivo
+  ---
+  duration_ms: 0.146912
+  type: 'test'
+  ...
+# Subtest: C03 interlocutores conservados, no usados como sujetos clínicos
+ok 14 - C03 interlocutores conservados, no usados como sujetos clínicos
+  ---
+  duration_ms: 1.180719
+  type: 'test'
+  ...
+# Subtest: C04 tiempos no suministrados no se completan desde fecha de importación
+ok 15 - C04 tiempos no suministrados no se completan desde fecha de importación
+  ---
+  duration_ms: 0.333442
+  type: 'test'
+  ...
+# Subtest: C05 no convierte texto idéntico en raíz ni anotación validada
+ok 16 - C05 no convierte texto idéntico en raíz ni anotación validada
+  ---
+  duration_ms: 0.432932
+  type: 'test'
+  ...
+# Subtest: C06 marcas de incertidumbre conservan sus offsets
+ok 17 - C06 marcas de incertidumbre conservan sus offsets
+  ---
+  duration_ms: 0.170167
+  type: 'test'
+  ...
+# Subtest: C07 marcas léxicas no clasifican automáticamente el estado del paciente
+ok 18 - C07 marcas léxicas no clasifican automáticamente el estado del paciente
+  ---
+  duration_ms: 0.123616
+  type: 'test'
+  ...
+# Subtest: C08 gramática de interlocutores tolera múltiples etiquetas en una línea
+ok 19 - C08 gramática de interlocutores tolera múltiples etiquetas en una línea
+  ---
+  duration_ms: 0.206492
+  type: 'test'
+  ...
+# Subtest: C09 corpus vacío es vacío
+ok 20 - C09 corpus vacío es vacío
+  ---
+  duration_ms: 0.674246
+  type: 'test'
+  ...
+# Subtest: C10 límite de corpus evita cargas sin acotar
+ok 21 - C10 límite de corpus evita cargas sin acotar
+  ---
+  duration_ms: 0.414445
+  type: 'test'
+  ...
+# Subtest: C11 paquetes de diálogo cumplen esquema
+ok 22 - C11 paquetes de diálogo cumplen esquema
+  ---
+  duration_ms: 0.900557
+  type: 'test'
+  ...
+# Subtest: C12 etiquetas sin corchetes y líneas sin etiqueta se conservan
+ok 23 - C12 etiquetas sin corchetes y líneas sin etiqueta se conservan
+  ---
+  duration_ms: 1.209543
+  type: 'test'
+  ...
+# Subtest: T01: fuente exacta y esquema semántico válidos
+ok 24 - T01: fuente exacta y esquema semántico válidos
+  ---
+  duration_ms: 2.591266
+  type: 'test'
+  ...
+# Subtest: T02: disponibilidad excluye entradas futuras
+ok 25 - T02: disponibilidad excluye entradas futuras
+  ---
+  duration_ms: 0.987478
+  type: 'test'
+  ...
+# Subtest: T03: añadir futuro no modifica la vista pasada
+ok 26 - T03: añadir futuro no modifica la vista pasada
+  ---
+  duration_ms: 1.070474
+  type: 'test'
+  ...
+# Subtest: T04: copia conserva una sola raíz
+ok 27 - T04: copia conserva una sola raíz
+  ---
+  duration_ms: 0.48468
+  type: 'test'
+  ...
+# Subtest: T05: copia no reinicia antigüedad
+ok 28 - T05: copia no reinicia antigüedad
+  ---
+  duration_ms: 0.205069
+  type: 'test'
+  ...
+# Subtest: T06: antigüedad desconocida no es cero
+ok 29 - T06: antigüedad desconocida no es cero
+  ---
+  duration_ms: 0.156597
+  type: 'test'
+  ...
+# Subtest: T07: citas alteradas se rechazan
+ok 30 - T07: citas alteradas se rechazan
+  ---
+  duration_ms: 0.359112
+  type: 'test'
+  ...
+# Subtest: T08: fuente huérfana se rechaza
+ok 31 - T08: fuente huérfana se rechaza
+  ---
+  duration_ms: 0.289266
+  type: 'test'
+  ...
+# Subtest: T09: raíz inexistente se rechaza
+ok 32 - T09: raíz inexistente se rechaza
+  ---
+  duration_ms: 0.739435
+  type: 'test'
+  ...
+# Subtest: T10: misma raíz con valores incompatibles se rechaza
+ok 33 - T10: misma raíz con valores incompatibles se rechaza
+  ---
+  duration_ms: 1.63821
+  type: 'test'
+  ...
+# Subtest: T11: tiempo sin zona se rechaza
+ok 34 - T11: tiempo sin zona se rechaza
+  ---
+  duration_ms: 1.443275
+  type: 'test'
+  ...
+# Subtest: T12: fecha de calendario imposible se rechaza
+ok 35 - T12: fecha de calendario imposible se rechaza
+  ---
+  duration_ms: 0.216467
+  type: 'test'
+  ...
+# Subtest: T13: extremos de cita UTF-16 fuera del texto se rechazan
+ok 36 - T13: extremos de cita UTF-16 fuera del texto se rechazan
+  ---
+  duration_ms: 0.185459
+  type: 'test'
+  ...
+# Subtest: T14: dos polos opuestos en mismo sujeto/episodio/instante son candidatos
+ok 37 - T14: dos polos opuestos en mismo sujeto/episodio/instante son candidatos
+  ---
+  duration_ms: 9.649334
+  type: 'test'
+  ...
+# Subtest: T15: distintos episodios no son conflicto
+ok 38 - T15: distintos episodios no son conflicto
+  ---
+  duration_ms: 0.347784
+  type: 'test'
+  ...
+# Subtest: T16: distintos sujetos no son conflicto
+ok 39 - T16: distintos sujetos no son conflicto
+  ---
+  duration_ms: 0.292501
+  type: 'test'
+  ...
+# Subtest: T17: cambio en momentos distintos no equivale a contradicción
+ok 40 - T17: cambio en momentos distintos no equivale a contradicción
+  ---
+  duration_ms: 0.21892
+  type: 'test'
+  ...
+# Subtest: T18: instrucción no participa como acción o estado
+ok 41 - T18: instrucción no participa como acción o estado
+  ---
+  duration_ms: 0.203266
+  type: 'test'
+  ...
+# Subtest: T19: disponibilidad desconocida queda fuera del corte
+ok 42 - T19: disponibilidad desconocida queda fuera del corte
+  ---
+  duration_ms: 0.105449
+  type: 'test'
+  ...
+# Subtest: T20: revisión preserva el pasado y añade versión
+ok 43 - T20: revisión preserva el pasado y añade versión
+  ---
+  duration_ms: 0.613675
+  type: 'test'
+  ...
+# Subtest: T21: revisión anterior a la versión previa se rechaza
+ok 44 - T21: revisión anterior a la versión previa se rechaza
+  ---
+  duration_ms: 0.336758
+  type: 'test'
+  ...
+# Subtest: T22: versión obsoleta no se sobrescribe
+ok 45 - T22: versión obsoleta no se sobrescribe
+  ---
+  duration_ms: 0.255044
+  type: 'test'
+  ...
+# Subtest: T23: copia mecánica mantiene posterior estático
+ok 46 - T23: copia mecánica mantiene posterior estático
+  ---
+  duration_ms: 0.10598
+  type: 'test'
+  ...
+# Subtest: T24: cinco mediciones independientes no son cinco copias
+ok 47 - T24: cinco mediciones independientes no son cinco copias
+  ---
+  duration_ms: 0.248214
+  type: 'test'
+  ...
+# Subtest: T25: HMM propaga observación antigua, no tiempo de nota
+ok 48 - T25: HMM propaga observación antigua, no tiempo de nota
+  ---
+  duration_ms: 0.232
+  type: 'test'
+  ...
+# Subtest: T26: HMM no incorpora llegada tardía antes del corte
+ok 49 - T26: HMM no incorpora llegada tardía antes del corte
+  ---
+  duration_ms: 0.141954
+  type: 'test'
+  ...
+# Subtest: T27: HMM usa tiempo original de evidencia tardía
+ok 50 - T27: HMM usa tiempo original de evidencia tardía
+  ---
+  duration_ms: 0.110897
+  type: 'test'
+  ...
+# Subtest: T28: HMM rechaza raíz incoherente en vez de descartar valor
+ok 51 - T28: HMM rechaza raíz incoherente en vez de descartar valor
+  ---
+  duration_ms: 0.179581
+  type: 'test'
+  ...
+# Subtest: X01: negación explícita conservada
+ok 52 - X01: negación explícita conservada
+  ---
+  duration_ms: 2.871438
+  type: 'test'
+  ...
+# Subtest: X02: instrucción de retiro no es acción realizada
+ok 53 - X02: instrucción de retiro no es acción realizada
+  ---
+  duration_ms: 0.317068
+  type: 'test'
+  ...
+# Subtest: X03: retiro documentado realizado
+ok 54 - X03: retiro documentado realizado
+  ---
+  duration_ms: 0.20537
+  type: 'test'
+  ...
+# Subtest: X04: negación de retiro no es retiro positivo
+ok 55 - X04: negación de retiro no es retiro positivo
+  ---
+  duration_ms: 0.215916
+  type: 'test'
+  ...
+# Subtest: X05: incertidumbre no es negación
+ok 56 - X05: incertidumbre no es negación
+  ---
+  duration_ms: 0.334134
+  type: 'test'
+  ...
+# Subtest: X06: familiar no se atribuye al paciente
+ok 57 - X06: familiar no se atribuye al paciente
+  ---
+  duration_ms: 0.333844
+  type: 'test'
+  ...
+# Subtest: X07: todos los resultados automáticos quedan pendientes
+ok 58 - X07: todos los resultados automáticos quedan pendientes
+  ---
+  duration_ms: 0.255175
+  type: 'test'
+  ...
+# Subtest: X08: fuente exacta conservada incluso con tildes y emoji
+ok 59 - X08: fuente exacta conservada incluso con tildes y emoji
+  ---
+  duration_ms: 0.69645
+  type: 'test'
+  ...
+# Subtest: X09: texto no soportado permanece sin estructurar
+ok 60 - X09: texto no soportado permanece sin estructurar
+  ---
+  duration_ms: 0.568757
+  type: 'test'
+  ...
+# Subtest: X10: no se inventa hora de evidencia ni episodio
+ok 61 - X10: no se inventa hora de evidencia ni episodio
+  ---
+  duration_ms: 0.314834
+  type: 'test'
+  ...
+# Subtest: X11: cláusula ambigua no se aplica parcialmente
+ok 62 - X11: cláusula ambigua no se aplica parcialmente
+  ---
+  duration_ms: 0.150266
+  type: 'test'
+  ...
+# Subtest: X12: la fuente vacía no inventa nodos
+ok 63 - X12: la fuente vacía no inventa nodos
+  ---
+  duration_ms: 0.701337
+  type: 'test'
+  ...
+# Subtest: G01 · no corta la vista a seis ni sesenta afirmaciones
+ok 64 - G01 · no corta la vista a seis ni sesenta afirmaciones
+  ---
+  duration_ms: 15.63786
+  type: 'test'
+  ...
+# Subtest: G02 · una raíz compartida es un único nodo
+ok 65 - G02 · una raíz compartida es un único nodo
+  ---
+  duration_ms: 0.878734
+  type: 'test'
+  ...
+# Subtest: G03 · conserva cada cita, versión y tiempos
+ok 66 - G03 · conserva cada cita, versión y tiempos
+  ---
+  duration_ms: 0.661197
+  type: 'test'
+  ...
+# Subtest: G04 · no modifica los datos de entrada
+ok 67 - G04 · no modifica los datos de entrada
+  ---
+  duration_ms: 0.600315
+  type: 'test'
+  ...
+# Subtest: G05 · cada combo es un documento, nunca una raíz duplicada
+ok 68 - G05 · cada combo es un documento, nunca una raíz duplicada
+  ---
+  duration_ms: 0.65689
+  type: 'test'
+  ...
+# Subtest: G06 · las relaciones conservan dirección y fundamento
+ok 69 - G06 · las relaciones conservan dirección y fundamento
+  ---
+  duration_ms: 1.297225
+  type: 'test'
+  ...
+# Subtest: G07 · no crea aristas con extremos inexistentes
+ok 70 - G07 · no crea aristas con extremos inexistentes
+  ---
+  duration_ms: 0.478261
+  type: 'test'
+  ...
+# Subtest: G08 · no anticipa evidencia disponible después del corte
+ok 71 - G08 · no anticipa evidencia disponible después del corte
+  ---
+  duration_ms: 0.349097
+  type: 'test'
+  ...
+# Subtest: G09 · conserva relaciones entre antiguas páginas distintas
+ok 72 - G09 · conserva relaciones entre antiguas páginas distintas
+  ---
+  duration_ms: 5.839902
+  type: 'test'
+  ...
+# Subtest: G10 · namespaces distinguen identificadores potencialmente ambiguos
+ok 73 - G10 · namespaces distinguen identificadores potencialmente ambiguos
+  ---
+  duration_ms: 0.605272
+  type: 'test'
+  ...
+# Subtest: G11 · IDs duplicados se rechazan sin deduplicación silenciosa
+ok 74 - G11 · IDs duplicados se rechazan sin deduplicación silenciosa
+  ---
+  duration_ms: 0.801368
+  type: 'test'
+  ...
+# Subtest: G12 · raíz ausente se advierte sin inventarla
+ok 75 - G12 · raíz ausente se advierte sin inventarla
+  ---
+  duration_ms: 0.421535
+  type: 'test'
+  ...
+# Subtest: G13 · extremo ausente queda advertido
+ok 76 - G13 · extremo ausente queda advertido
+  ---
+  duration_ms: 0.433133
+  type: 'test'
+  ...
+# Subtest: G14 · fechas desconocidas siguen nulas
+ok 77 - G14 · fechas desconocidas siguen nulas
+  ---
+  duration_ms: 0.378691
+  type: 'test'
+  ...
+# Subtest: G15 · la copia no rejuvenece la evidencia de origen
+ok 78 - G15 · la copia no rejuvenece la evidencia de origen
+  ---
+  duration_ms: 0.380784
+  type: 'test'
+  ...
+# Subtest: G16 · vecindad no modifica la dirección de las relaciones
+ok 79 - G16 · vecindad no modifica la dirección de las relaciones
+  ---
+  duration_ms: 1.03501
+  type: 'test'
+  ...
+# Subtest: G17 · cero y dos saltos funcionan, saltos inválidos se rechazan
+ok 80 - G17 · cero y dos saltos funcionan, saltos inválidos se rechazan
+  ---
+  duration_ms: 0.303517
+  type: 'test'
+  ...
+# Subtest: G18 · enfoque cuenta explícitamente nodos y aristas ocultos
+ok 81 - G18 · enfoque cuenta explícitamente nodos y aristas ocultos
+  ---
+  duration_ms: 0.281434
+  type: 'test'
+  ...
+# Subtest: G19 · grupo enfocado informa su tamaño relativo a la vista completa
+ok 82 - G19 · grupo enfocado informa su tamaño relativo a la vista completa
+  ---
+  duration_ms: 0.228815
+  type: 'test'
+  ...
+# Subtest: G20 · búsqueda sin tildes conserva el fragmento original
+ok 83 - G20 · búsqueda sin tildes conserva el fragmento original
+  ---
+  duration_ms: 0.510019
+  type: 'test'
+  ...
+# Subtest: G21 · selección atenúa sin eliminar datos
+ok 84 - G21 · selección atenúa sin eliminar datos
+  ---
+  duration_ms: 0.242145
+  type: 'test'
+  ...
+# Subtest: G22 · selección nula no adjudica prioridad
+ok 85 - G22 · selección nula no adjudica prioridad
+  ---
+  duration_ms: 0.140872
+  type: 'test'
+  ...
+# Subtest: G23 · desagrupar conserva nodos y relaciones
+ok 86 - G23 · desagrupar conserva nodos y relaciones
+  ---
+  duration_ms: 0.498201
+  type: 'test'
+  ...
+# Subtest: G24 · SVG de lectura contiene 85 afirmaciones, no una página
+ok 87 - G24 · SVG de lectura contiene 85 afirmaciones, no una página
+  ---
+  duration_ms: 4.835899
+  type: 'test'
+  ...
+# Subtest: G25 · snapshot distingue grafos con relaciones diferentes
+ok 88 - G25 · snapshot distingue grafos con relaciones diferentes
+  ---
+  duration_ms: 0.701437
+  type: 'test'
+  ...
+# Subtest: por defecto sólo muestra nodo central y un salto, sin cortar por páginas
+ok 89 - por defecto sólo muestra nodo central y un salto, sin cortar por páginas
+  ---
+  duration_ms: 5.483515
+  type: 'test'
+  ...
+# Subtest: expandir una rama revela nuevos vecinos pero no toda la red
+ok 90 - expandir una rama revela nuevos vecinos pero no toda la red
+  ---
+  duration_ms: 0.647035
+  type: 'test'
+  ...
+# Subtest: contraer respeta nodos compartidos y vuelve al conjunto base
+ok 91 - contraer respeta nodos compartidos y vuelve al conjunto base
+  ---
+  duration_ms: 0.511721
+  type: 'test'
+  ...
+# Subtest: global muestra la vista íntegra pero nunca elementos externos al corte
+ok 92 - global muestra la vista íntegra pero nunca elementos externos al corte
+  ---
+  duration_ms: 0.231208
+  type: 'test'
+  ...
+# Subtest: la selección es navegacional y no invierte las aristas documentales
+ok 93 - la selección es navegacional y no invierte las aristas documentales
+  ---
+  duration_ms: 0.392591
+  type: 'test'
+  ...
+# Subtest: no expande un nodo oculto ni acepta una profundidad no válida
+ok 94 - no expande un nodo oculto ni acepta una profundidad no válida
+  ---
+  duration_ms: 0.640585
+  type: 'test'
+  ...
+# Subtest: grafo vacío no inventa nodos ni selección
+ok 95 - grafo vacío no inventa nodos ni selección
+  ---
+  duration_ms: 0.251198
+  type: 'test'
+  ...
+# Subtest: expandir el nodo central profundiza desde su primer salto visible
+ok 96 - expandir el nodo central profundiza desde su primer salto visible
+  ---
+  duration_ms: 0.193201
+  type: 'test'
+  ...
+# Subtest: un documento con muchos fragmentos expande vecinos en lotes y no ensucia el grafo local
+ok 97 - un documento con muchos fragmentos expande vecinos en lotes y no ensucia el grafo local
+  ---
+  duration_ms: 2.345685
+  type: 'test'
+  ...
+# Subtest: layout determinista, finito y no destructivo
+ok 98 - layout determinista, finito y no destructivo
+  ---
+  duration_ms: 4.224608
+  type: 'test'
+  ...
+# Subtest: al expandir, preserva las posiciones arrastradas y ancla nuevos nodos cerca de vecinos
+ok 99 - al expandir, preserva las posiciones arrastradas y ancla nuevos nodos cerca de vecinos
+  ---
+  duration_ms: 1.030794
+  type: 'test'
+  ...
+# Subtest: transformación cámara mundo/pantalla reversible
+ok 100 - transformación cámara mundo/pantalla reversible
+  ---
+  duration_ms: 0.306802
+  type: 'test'
+  ...
+# Subtest: S01: enum no acepta propiedades heredadas de Object
+ok 101 - S01: enum no acepta propiedades heredadas de Object
+  ---
+  duration_ms: 2.818168
+  type: 'test'
+  ...
+# Subtest: S02: unidades distintas no generan oposición automática
+ok 102 - S02: unidades distintas no generan oposición automática
+  ---
+  duration_ms: 10.525515
+  type: 'test'
+  ...
+# Subtest: S03: cambiar unidad conservando raíz es rechazado
+ok 103 - S03: cambiar unidad conservando raíz es rechazado
+  ---
+  duration_ms: 0.774528
+  type: 'test'
+  ...
+# Subtest: S04: contenido HTML se escapa sin ejecutar ni insertar elementos
+ok 104 - S04: contenido HTML se escapa sin ejecutar ni insertar elementos
+  ---
+  duration_ms: 0.194293
+  type: 'test'
+  ...
+# Subtest: S05: importación con constructor malicioso es rechazada
+ok 105 - S05: importación con constructor malicioso es rechazada
+  ---
+  duration_ms: 0.446923
+  type: 'test'
+  ...
+# Subtest: S06: ningún documento futuro aparece al corte
+ok 106 - S06: ningún documento futuro aparece al corte
+  ---
+  duration_ms: 1.169022
+  type: 'test'
+  ...
+# Subtest: D01: muestra contiene tres diálogos y no declara otros casos cargados
+ok 107 - D01: muestra contiene tres diálogos y no declara otros casos cargados
+  ---
+  duration_ms: 0.854839
+  type: 'test'
+  ...
+# Subtest: D02: todos los ejemplos externos pasan esquema sin inventar raíces
+ok 108 - D02: todos los ejemplos externos pasan esquema sin inventar raíces
+  ---
+  duration_ms: 3.092922
+  type: 'test'
+  ...
+# Subtest: D03: empaquetar tres textos permite recuento y extracción local sin alterar contenido
+ok 109 - D03: empaquetar tres textos permite recuento y extracción local sin alterar contenido
+  ---
+  duration_ms: 0.946106
+  type: 'test'
+  ...
+1..109
+# tests 109
+# suites 0
+# pass 109
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 284.465757
