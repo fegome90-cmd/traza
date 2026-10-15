@@ -75,6 +75,22 @@ with sync_playwright() as p:
  page.get_by_role('button',name='Global',exact=True).click()
  ck('ACI: la vista global contiene 98 nodos','98 nodos' in page.locator('[data-stats]').inner_text())
  page.close()
+ # Regression: selecting a distant node in Global must keep it visible in Local.
+ # This test-only getter exposes the running panel; production HTML is unchanged.
+ exposed=HTML.replace('let currentView,graphPanel=null,toastTimer;',
+   'let currentView,graphPanel=null,toastTimer; Object.defineProperty(globalThis, "__testGraphPanel", {get(){return graphPanel}});')
+ assert exposed!=HTML
+ page=browser.new_page(viewport={'width':1280,'height':880})
+ page.set_content(exposed)
+ page.locator('#bundle-file').set_input_files(str(ROOT/'data/ACI-consulta-y-nota.json'))
+ page.get_by_role('button',name='Global',exact=True).click()
+ target=page.evaluate("() => __testGraphPanel.full.nodes.find(n=>n.data.key==='R-c40@1').id")
+ page.evaluate('(id)=>__testGraphPanel.pick(id)',target)
+ page.get_by_role('button',name='Local',exact=True).click()
+ ck('Global a Local: conserva nodo seleccionado',not page.locator('[data-selected]').is_hidden())
+ ck('Global a Local: usa selección como centro',page.evaluate('() => __testGraphPanel.anchor===__testGraphPanel.current'))
+ ck('Global a Local: nodo en grafo local',page.evaluate('() => __testGraphPanel.visible.nodes.some(n=>n.id===__testGraphPanel.current)'))
+ page.close()
  browser.close()
 (OUTPUT/'browser-results.json').write_text(json.dumps(RESULT,ensure_ascii=False,indent=2))
 print('SUMMARY',sum(x['ok'] for x in RESULT),'/',len(RESULT),'passed')

@@ -1,7 +1,7 @@
 /** TRAZA · Graph View compacto, local-first. No modifica el expediente. MIT. */
 import {escapeHTML as esc} from './export.mjs';
 import {toGraphData,graphSearch} from './graph-data.mjs';
-import {expandBranch,collapseBranch,visibleGraph,graphConnections} from './graph-exploration.mjs';
+import {expandBranch,collapseBranch,visibleGraph,graphConnections,anchorAfterSelection} from './graph-exploration.mjs';
 import {GraphCanvas} from './graph-view.mjs';
 const short=(s,n=64)=>{s=String(s||'').replace(/\s+/g,' ').trim();return s.length>n?s.slice(0,n-1)+'…':s;};
 export class GraphPanel {
@@ -80,7 +80,7 @@ export class GraphPanel {
  }
  collapse(id){if(this.dead||this.state.global)return;this.state.expansions=collapseBranch(this.state.expansions,id);this.update();}
  pick(id,{forceFocus=false}={}){const n=this.full.nodes.find(n=>n.id===id);if(!n)return;
-  this.current=id;if(forceFocus)this.anchor=id;this.canvas.setSelected(id);this.describe();this.onSelect(n.data.key);
+  this.current=id;this.anchor=anchorAfterSelection(this.anchor,id,{global:this.state.global,forceFocus});this.canvas.setSelected(id);this.describe();this.onSelect(n.data.key);
  }
  setSelection(key){if(this.dead)return;const n=this.full.nodes.find(n=>n.data.key===key);if(!n)return;
   this.current=n.id;if(!this.visible.nodes.some(x=>x.id===n.id)){this.anchor=n.id;this.state.expansions={};this.state.global=false;this.update();}else{this.canvas.setSelected(this.current);this.describe();}

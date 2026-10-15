@@ -35,6 +35,10 @@ export function collapseBranch(expansions={},id){
   if(next>0)out[id]=next;else delete out[id];
   return out;
 }
+/** A Global selection becomes the local exploration anchor when switching back. */
+export function anchorAfterSelection(currentAnchor,picked,{global=false,forceFocus=false}={}){
+  return (global||forceFocus)?picked:currentAnchor;
+}
 export function graphDegree(data,id){return adjacency(data).get(id)?.size??0;}
 export function graphConnections(data,id){return edgesOf(data).filter(e=>e.source===id||e.target===id);}
 export function visibleGraph(data,{center=null,global=false,expansions={}}={}){

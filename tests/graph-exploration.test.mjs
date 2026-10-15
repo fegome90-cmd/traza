@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {visibleGraph,expandBranch,collapseBranch,graphDegree,graphConnections} from '../src/graph-exploration.mjs';
+import {visibleGraph,expandBranch,collapseBranch,graphDegree,graphConnections,anchorAfterSelection} from '../src/graph-exploration.mjs';
 const node = (id)=>({id,data:{key:id,title:id}});
 const link = (id,source,target)=>({id,source,target,data:{kind:'relation',type:'supports'}});
 const data={nodes:['A','B','C','D','E','Z'].map(node),edges:[link('ab','A','B'),link('bc','B','C'),link('cd','C','D'),link('de','D','E'),link('az','A','Z')],combos:[],warnings:[]};
@@ -35,4 +35,11 @@ test('un documento con muchos fragmentos expande vecinos en lotes y no ensucia e
  const a=visibleGraph(star,{center:'C000',expansions:expandBranch({},'C000')});assert.ok(a.nodes.length>start.nodes.length&&a.nodes.length<=17,a.nodes.length);
  const b=visibleGraph(star,{center:'C000',expansions:expandBranch(expandBranch({},'C000'),'C000')});assert.ok(b.nodes.length>a.nodes.length&&b.nodes.length<=25,b.nodes.length);
  const all=visibleGraph(star,{center:'C000',global:true});assert.equal(all.nodes.length,91);
+});
+
+// Regresión PR #1: seleccionar un nodo remoto desde Global debe centrar su vista Local.
+test('global → local conserva como centro el nodo seleccionado, sin cambiar el centro por un clic local',()=>{
+ assert.equal(anchorAfterSelection('A','D',{global:true}), 'D');
+ assert.equal(anchorAfterSelection('A','D',{global:false}), 'A');
+ assert.equal(anchorAfterSelection('A','D',{forceFocus:true}), 'D');
 });
