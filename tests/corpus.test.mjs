@@ -1,0 +1,16 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {splitCorpus,dialogueClaims,uncertaintyCues,corpusBundle} from '../src/corpus.mjs';
+import {validateBundle} from '../src/engine.mjs';
+const raw='[NURSE]: First.\n[PATIENT]: I am not sure.\n---\n[DOCTOR]: Plan.\n—\n[NURSE]: Third.';
+test('C01 delimitadores aislados producen casos, sin separar guiones internos',()=>assert.equal(splitCorpus(raw).length,3));
+test('C02 cada caso mantiene offsets exactos respecto al archivo',()=>{for(const c of splitCorpus(raw))assert.equal(raw.slice(c.start,c.end),c.text);});
+test('C03 interlocutores conservados, no usados como sujetos clínicos',()=>{const b=corpusBundle(splitCorpus(raw)[0]);assert.equal(b.claims[0].speaker,'NURSE');assert.equal(b.claims[0].subject,null);});
+test('C04 tiempos no suministrados no se completan desde fecha de importación',()=>assert.ok(corpusBundle(splitCorpus(raw)[0]).claims.every(c=>c.eventAt===null&&c.availableAt===null)));
+test('C05 no convierte texto idéntico en raíz ni anotación validada',()=>{const b=corpusBundle(splitCorpus('[NURSE]: Same.\n[NURSE]: Same.')[0]);assert.equal(b.roots.length,0);assert.ok(b.claims.every(c=>c.review==='pending'));});
+test('C06 marcas de incertidumbre conservan sus offsets',()=>{const text='I think he is well. Not sure if reviewed.';const m=uncertaintyCues(text);assert.equal(m.length,2);assert.ok(m.every(x=>text.slice(x.start,x.end)===x.quote));});
+test('C07 marcas léxicas no clasifican automáticamente el estado del paciente',()=>{const c=corpusBundle(splitCorpus('[NURSE]: I think he has pain.')[0]).claims[0];assert.equal(c.value,null);assert.equal(c.modality,'unknown');});
+test('C08 gramática de interlocutores tolera múltiples etiquetas en una línea',()=>{const b=corpusBundle(splitCorpus('[NURSE]: Hi. [PATIENT]: Yes.')[0]);assert.equal(b.claims.length,2);});
+test('C09 corpus vacío es vacío',()=>assert.deepEqual(splitCorpus(' \n '),[]));
+test('C10 límite de corpus evita cargas sin acotar',()=>assert.throws(()=>splitCorpus('x'.repeat(4000001))));
+test('C11 paquetes de diálogo cumplen esquema',()=>assert.equal(validateBundle(corpusBundle(splitCorpus(raw)[0])).ok,true));
+test('C12 etiquetas sin corchetes y líneas sin etiqueta se conservan',()=>{const b=corpusBundle(splitCorpus('NURSE: First.\nContinued\nDOCTOR: Fine.')[0]);assert.equal(b.claims.length,2);assert.ok(b.claims[0].source.quote.includes('Continued'));});

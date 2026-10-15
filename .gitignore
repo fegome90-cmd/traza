@@ -1,0 +1,38 @@
+# OS, caches and dependencies
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.venv/
+.playwright/
+playwright-report/
+test-results/
+coverage/
+
+# Secrets and private local data
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_ed25519
+credentials.json
+data/private/
+data/raw/
+*.log
+
+# Editors, worktrees and temporary agent state
+.vscode/
+.idea/
+.worktrees/
+worktrees/
+.superpowers/
+.tmp/
+.tmp-*/
+
+# dist/index.html and attributed synthetic fixtures are intentionally versioned.

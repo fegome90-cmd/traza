@@ -1,0 +1,18 @@
+{
+  "name": "traza-clinica-obsidian-graph",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "python3 scripts/repo_checks.py syntax",
+    "build": "python3 scripts/build.py",
+    "serve": "python3 -m http.server 4173 --bind 127.0.0.1 --directory dist",
+    "test:e2e": "python3 tests/obsidian_browser.py",
+    "lint": "python3 scripts/repo_checks.py lint",
+    "format:check": "python3 scripts/repo_checks.py format",
+    "build:check": "python3 scripts/repo_checks.py build",
+    "test:governance": "python3 -m unittest discover -s tests -p 'test_repo_checks.py'",
+    "verify": "npm run lint && npm run format:check && npm run check && npm test && npm run test:governance && npm run build:check"
+  }
+}

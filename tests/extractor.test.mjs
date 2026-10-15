@@ -1,0 +1,15 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {extractClaims} from '../src/extractor.mjs';
+const doc=text=>({id:'d1',title:'Texto',text,subject:'P1',author:null,authoredAt:null,availableAt:'2026-10-13T20:05:00-03:00'});
+const ex=text=>extractClaims(doc(text));
+test('X01: negación explícita conservada',()=>assert.equal(ex('Niega fiebre.')[0].polarity,'negated'));
+test('X02: instrucción de retiro no es acción realizada',()=>assert.equal(ex('Se indica retirar PICC A.')[0].modality,'instruction'));
+test('X03: retiro documentado realizado',()=>assert.equal(ex('Se retira PICC A.')[0].modality,'action'));
+test('X04: negación de retiro no es retiro positivo',()=>assert.equal(ex('No se retira PICC A.')[0].polarity,'negated'));
+test('X05: incertidumbre no es negación',()=>{const c=ex('No se descarta infección.')[0];assert.equal(c.polarity,'uncertain');assert.equal(c.modality,'hypothesis');});
+test('X06: familiar no se atribuye al paciente',()=>{const c=ex('Madre refiere dolor.')[0];assert.equal(c.experiencer,'relative');assert.notEqual(c.subject,'P1');});
+test('X07: todos los resultados automáticos quedan pendientes',()=>assert.ok(ex('PICC A presente. Niega fiebre.').every(c=>c.review==='pending'&&c.rootIds.length===0)));
+test('X08: fuente exacta conservada incluso con tildes y emoji',()=>{const d=doc('🧪 Caso sintético.\nNiega náuseas.');for(const c of extractClaims(d))assert.equal(d.text.slice(c.source.start,c.source.end),c.source.quote);});
+test('X09: texto no soportado permanece sin estructurar',()=>{const c=ex('El paciente conversó de su familia.')[0];assert.equal(c.concept,null);assert.equal(c.capture,'ambiguous');assert.equal(c.modality,'unknown');});
+test('X10: no se inventa hora de evidencia ni episodio',()=>{const c=ex('PICC A presente.')[0];assert.equal(c.eventAt,null);assert.equal(c.episode,null);assert.equal(c.rootIds.length,0);});
+test('X11: cláusula ambigua no se aplica parcialmente',()=>assert.equal(ex('Sin fiebre y con dolor.')[0].modality,'unknown'));
+test('X12: la fuente vacía no inventa nodos',()=>assert.deepEqual(ex('   \n '),[]));

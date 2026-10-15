@@ -1,0 +1,1 @@
+/mnt/data/work_obsidian/TRAZA-Obsidian-Graph-v0.3.0/dist/index.html | bytes=162960 | sha256=d05d4bc41965dbc8ee6bdf64ca924cfc012d9a6e77462033397092fc856cdd2d

@@ -1,0 +1,38 @@
+{
+  "title": "Muestra Figshare · entrega sintética",
+  "dataset": "Conway 2026",
+  "doi": "10.6084/m9.figshare.32658084.v1",
+  "articleDOI": "10.2196/106133",
+  "license": "CC BY 4.0",
+  "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+  "sourceURL": "https://ndownloader.figshare.com/files/65497158",
+  "attribution": "Conway, Aaron (2026). Large Language Models for Structured Information Extraction in Artificial Intelligence-Assisted Clinical Handover: Evaluation Study. Figshare. DOI: 10.6084/m9.figshare.32658084.v1.",
+  "retrieval": "Texto servido recuperado con Firecrawl el 13-10-2026; selección de tres diálogos, sin traducción. No copia binaria verificada del archivo completo.",
+  "reportedOriginalCount": 103,
+  "publishedFileCount": 1,
+  "publishedFilename": "tpch_text_values.md",
+  "publishedBytes": 184927,
+  "publishedMD5": "710e27e24c924b87968543a9f831e5ef",
+  "originalCountStatus": "Auditoría aportada por Felipe; no recuento programático del original en esta entrega",
+  "annotationStatus": "unannotated",
+  "includedCases": [
+    {
+      "id": "FIG-005",
+      "index": 5,
+      "title": "Incertidumbre y escalamiento"
+    },
+    {
+      "id": "FIG-007",
+      "index": 7,
+      "title": "Comunicación y barreras sensoriales · A"
+    },
+    {
+      "id": "FIG-008",
+      "index": 8,
+      "title": "Comunicación y barreras sensoriales · B"
+    }
+  ],
+  "includedCount": 3,
+  "binaryOriginalDownloaded": false,
+  "originalHashVerified": false
+}

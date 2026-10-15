@@ -1,0 +1,319 @@
+{
+  "schema": "traza-documentary-graph/0.1",
+  "case": {
+    "id": "SINTETICO-01",
+    "title": "PICC A · continuidad documental",
+    "synthetic": true
+  },
+  "documents": [
+    {
+      "id": "R01",
+      "title": "Valoración inicial",
+      "text": "08:00 · Valoración de enfermería\n\nPICC A presente en brazo derecho.\nPaciente refiere dolor 6/10 en reposo.\nNiega náuseas.",
+      "subject": "SINTETICO-01",
+      "author": "Profesional ficticio",
+      "authoredAt": "2026-10-13T08:05:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00"
+    },
+    {
+      "id": "R02",
+      "title": "Indicación de retiro",
+      "text": "11:30 · Plan documentado\n\nSe indica retirar PICC A.\nPendiente de ejecución.",
+      "subject": "SINTETICO-01",
+      "author": "Profesional ficticio",
+      "authoredAt": "2026-10-13T11:35:00-03:00",
+      "availableAt": "2026-10-13T11:35:00-03:00"
+    },
+    {
+      "id": "R03",
+      "title": "Acción de retiro",
+      "text": "12:00 · Procedimiento\n\nSe retira PICC A.\nProcedimiento consignado como realizado.",
+      "subject": "SINTETICO-01",
+      "author": "Profesional ficticio",
+      "authoredAt": "2026-10-13T13:00:00-03:00",
+      "availableAt": "2026-10-13T13:05:00-03:00"
+    },
+    {
+      "id": "R04",
+      "title": "Registro de continuidad",
+      "text": "20:00 · Registro de continuidad\n\nPICC A presente.\n\nLa afirmación se reproduce desde la valoración de las 08:00. No se consigna una nueva observación del dispositivo en esta nota.",
+      "subject": "SINTETICO-01",
+      "author": "Profesional ficticio",
+      "authoredAt": "2026-10-13T20:00:00-03:00",
+      "availableAt": "2026-10-13T20:05:00-03:00"
+    }
+  ],
+  "claims": [
+    {
+      "id": "A01",
+      "version": 1,
+      "source": {
+        "documentId": "R01",
+        "start": 34,
+        "end": 67,
+        "quote": "PICC A presente en brazo derecho."
+      },
+      "subject": "SINTETICO-01",
+      "experiencer": "patient",
+      "entity": "PICC A",
+      "episode": "PICC-A / episodio 1",
+      "concept": "presencia",
+      "value": "presente",
+      "unit": null,
+      "polarity": "affirmed",
+      "modality": "observation",
+      "eventAt": "2026-10-13T08:00:00-03:00",
+      "eventEnd": null,
+      "authoredAt": "2026-10-13T08:05:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00",
+      "rootIds": [
+        "O01"
+      ],
+      "capture": "present",
+      "uncertainty": null,
+      "review": "reviewed",
+      "reviewNote": "Anotación manual del caso sintético; no dato de paciente."
+    },
+    {
+      "id": "A02",
+      "version": 1,
+      "source": {
+        "documentId": "R01",
+        "start": 68,
+        "end": 106,
+        "quote": "Paciente refiere dolor 6/10 en reposo."
+      },
+      "subject": "SINTETICO-01",
+      "experiencer": "patient",
+      "entity": "Dolor en reposo",
+      "episode": "Valoración 08:00",
+      "concept": "dolor",
+      "value": "6",
+      "unit": "escala /10",
+      "polarity": "affirmed",
+      "modality": "report",
+      "eventAt": "2026-10-13T08:00:00-03:00",
+      "eventEnd": null,
+      "authoredAt": "2026-10-13T08:05:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00",
+      "rootIds": [
+        "O02"
+      ],
+      "capture": "present",
+      "uncertainty": null,
+      "review": "reviewed",
+      "reviewNote": "Anotación manual del caso sintético; no dato de paciente."
+    },
+    {
+      "id": "A03",
+      "version": 1,
+      "source": {
+        "documentId": "R01",
+        "start": 107,
+        "end": 121,
+        "quote": "Niega náuseas."
+      },
+      "subject": "SINTETICO-01",
+      "experiencer": "patient",
+      "entity": "Náuseas",
+      "episode": "Valoración 08:00",
+      "concept": "náuseas",
+      "value": "ausente",
+      "unit": null,
+      "polarity": "negated",
+      "modality": "report",
+      "eventAt": "2026-10-13T08:00:00-03:00",
+      "eventEnd": null,
+      "authoredAt": "2026-10-13T08:05:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00",
+      "rootIds": [
+        "O03"
+      ],
+      "capture": "present",
+      "uncertainty": null,
+      "review": "reviewed",
+      "reviewNote": "Anotación manual del caso sintético; no dato de paciente."
+    },
+    {
+      "id": "A04",
+      "version": 1,
+      "source": {
+        "documentId": "R02",
+        "start": 26,
+        "end": 51,
+        "quote": "Se indica retirar PICC A."
+      },
+      "subject": "SINTETICO-01",
+      "experiencer": "patient",
+      "entity": "PICC A",
+      "episode": "PICC-A / episodio 1",
+      "concept": "presencia",
+      "value": "retiro indicado",
+      "unit": null,
+      "polarity": "affirmed",
+      "modality": "instruction",
+      "eventAt": "2026-10-13T11:30:00-03:00",
+      "eventEnd": null,
+      "authoredAt": "2026-10-13T11:35:00-03:00",
+      "availableAt": "2026-10-13T11:35:00-03:00",
+      "rootIds": [],
+      "capture": "present",
+      "uncertainty": null,
+      "review": "reviewed",
+      "reviewNote": "Anotación manual del caso sintético; no dato de paciente."
+    },
+    {
+      "id": "A05",
+      "version": 1,
+      "source": {
+        "documentId": "R03",
+        "start": 23,
+        "end": 40,
+        "quote": "Se retira PICC A."
+      },
+      "subject": "SINTETICO-01",
+      "experiencer": "patient",
+      "entity": "PICC A",
+      "episode": "PICC-A / episodio 1",
+      "concept": "presencia",
+      "value": "ausente",
+      "unit": null,
+      "polarity": "negated",
+      "modality": "action",
+      "eventAt": "2026-10-13T12:00:00-03:00",
+      "eventEnd": null,
+      "authoredAt": "2026-10-13T13:00:00-03:00",
+      "availableAt": "2026-10-13T13:05:00-03:00",
+      "rootIds": [
+        "O04"
+      ],
+      "capture": "present",
+      "uncertainty": null,
+      "review": "reviewed",
+      "reviewNote": "Anotación manual del caso sintético; no dato de paciente."
+    },
+    {
+      "id": "A06",
+      "version": 1,
+      "source": {
+        "documentId": "R04",
+        "start": 33,
+        "end": 49,
+        "quote": "PICC A presente."
+      },
+      "subject": "SINTETICO-01",
+      "experiencer": "patient",
+      "entity": "PICC A",
+      "episode": "PICC-A / episodio 1",
+      "concept": "presencia",
+      "value": "presente",
+      "unit": null,
+      "polarity": "affirmed",
+      "modality": "observation",
+      "eventAt": "2026-10-13T20:00:00-03:00",
+      "eventEnd": null,
+      "authoredAt": "2026-10-13T20:00:00-03:00",
+      "availableAt": "2026-10-13T20:05:00-03:00",
+      "rootIds": [
+        "O01"
+      ],
+      "capture": "present",
+      "uncertainty": null,
+      "review": "reviewed",
+      "reviewNote": "Copia declarada por el texto fuente; el tiempo de evidencia sigue siendo 08:00."
+    }
+  ],
+  "roots": [
+    {
+      "id": "O01",
+      "subject": "SINTETICO-01",
+      "entity": "PICC A",
+      "episode": "PICC-A / episodio 1",
+      "concept": "presencia",
+      "value": "presente",
+      "unit": null,
+      "polarity": "affirmed",
+      "modality": "observation",
+      "evidenceAt": "2026-10-13T08:00:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00",
+      "source": {
+        "documentId": "R01",
+        "start": 34,
+        "end": 67,
+        "quote": "PICC A presente en brazo derecho."
+      },
+      "provenance": "Origen declarado en la anotación sintética"
+    },
+    {
+      "id": "O02",
+      "subject": "SINTETICO-01",
+      "entity": "Dolor en reposo",
+      "episode": "Valoración 08:00",
+      "concept": "dolor",
+      "value": "6",
+      "unit": "escala /10",
+      "polarity": "affirmed",
+      "modality": "report",
+      "evidenceAt": "2026-10-13T08:00:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00",
+      "source": {
+        "documentId": "R01",
+        "start": 68,
+        "end": 106,
+        "quote": "Paciente refiere dolor 6/10 en reposo."
+      },
+      "provenance": "Origen declarado en la anotación sintética"
+    },
+    {
+      "id": "O03",
+      "subject": "SINTETICO-01",
+      "entity": "Náuseas",
+      "episode": "Valoración 08:00",
+      "concept": "náuseas",
+      "value": "ausente",
+      "unit": null,
+      "polarity": "negated",
+      "modality": "report",
+      "evidenceAt": "2026-10-13T08:00:00-03:00",
+      "availableAt": "2026-10-13T08:05:00-03:00",
+      "source": {
+        "documentId": "R01",
+        "start": 107,
+        "end": 121,
+        "quote": "Niega náuseas."
+      },
+      "provenance": "Origen declarado en la anotación sintética"
+    },
+    {
+      "id": "O04",
+      "subject": "SINTETICO-01",
+      "entity": "PICC A",
+      "episode": "PICC-A / episodio 1",
+      "concept": "presencia",
+      "value": "ausente",
+      "unit": null,
+      "polarity": "negated",
+      "modality": "action",
+      "evidenceAt": "2026-10-13T12:00:00-03:00",
+      "availableAt": "2026-10-13T13:05:00-03:00",
+      "source": {
+        "documentId": "R03",
+        "start": 23,
+        "end": 40,
+        "quote": "Se retira PICC A."
+      },
+      "provenance": "Origen declarado en la anotación sintética"
+    }
+  ],
+  "relations": [
+    {
+      "id": "L01",
+      "from": "A06@1",
+      "to": "A01@1",
+      "type": "derives_from",
+      "availableAt": "2026-10-13T20:05:00-03:00",
+      "note": "El registro R04 declara reproducción desde la valoración de las 08:00. Relación anotada manualmente para el caso sintético."
+    }
+  ],
+  "audit": []
+}
