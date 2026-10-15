@@ -35,7 +35,7 @@ Los scripts del navegador cargan el **mismo HTML real** mediante `page.set_conte
 3. **Expandir +N** descubre vecinos adicionales de esa rama; **Contraer −1** revierte un nivel sin eliminar conexiones que también sean visibles por otras ramas. Doble clic sobre un nodo equivale a expandir.
 4. **Ver fuente** abre un panel lateral o una hoja inferior móvil con el fragmento exacto resaltado. **Detalle** muestra modalidad, sujeto, tiempos y procedencia. Ambos empiezan cerrados.
 5. **Buscar** funciona sobre todos los nodos disponibles en el corte, incluidos los ocultos por navegación; al elegir un resultado lo convierte en centro local.
-6. **Global** muestra todo el grafo de la *vista documental filtrada*, no todo el expediente sin importar el corte. Para volver a explorar por partes, selecciona **Local**.
+6. **Global** muestra todo el grafo de la *vista documental filtrada*, no todo el expediente sin importar el corte. Para volver a explorar por partes, selecciona **Local**. Si seleccionas una afirmación en Global y vuelves a Local, esa afirmación pasa a ser el centro del grafo.
 7. Arrastra el fondo para desplazar, un nodo para reposicionarlo, usa rueda o botones para zoom. El diseño incluye gesto de pinza táctil; no se ha ensayado en Safari/iOS real. **Ajustar** restablece el encuadre.
 
 La expansión de un nodo de grado muy alto se incorpora en **lotes de ocho vecinos** para evitar que una fuente con decenas de frases se despliegue de golpe. Local y Global sólo cambian visualización; las aristas originales conservan su dirección y su fuente. Un contador informa cuántos nodos y aristas permanecen ocultos en la vista local.
